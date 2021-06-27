@@ -1,8 +1,11 @@
 import React from 'react';
-import { render } from '../../test/test-utils';
-
+import { render,screen} from '../../test/test-utils';
+import userEvent from '@testing-library/user-event'
 import LayoutContainer from './LayoutContainer';
 
 it('can browse to the about page', async () => {
-  // For `LayoutContainer`, you should be able to render the layout container, followed by navigating to the About page.
+ render(<LayoutContainer />);
+  expect(screen.getByTestId('layout-container')).toBeTruthy();
+  expect(screen.getByText(/Go to about/i)).toBeTruthy();
+  userEvent.click(screen.getByText(/Go to about/i));
 });

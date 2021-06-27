@@ -3,7 +3,7 @@ import { RouteComponentProps } from '@reach/router';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { ReduxState } from '../redux/store';
-import { incrementOne } from '../redux/actions/sample';
+import { incrementOne,incrementByCount } from '../redux/actions/sample';
 
 const About: React.FC<RouteComponentProps> = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -14,6 +14,7 @@ const About: React.FC<RouteComponentProps> = (): JSX.Element => {
       <>
         <h1>About Page</h1>
         <button onClick={() => dispatch(incrementOne)}>Increment</button>
+        <button onClick={() => dispatch(incrementByCount)}>Increment By count 5</button>
         <p>Current Count: {counter}</p>
       </>
     </section>

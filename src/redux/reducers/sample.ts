@@ -3,14 +3,12 @@ import * as types from "../types";
 export interface SampleState {
   counter: number;
 }
-
-export type SampleAction = unknown;
-
+ const SampleAction = { type: types.INCREMENT_ONE,count:0}
 const initialState: SampleState = {
   counter: 0,
 };
 
-export default (state = initialState, action: SampleAction): SampleState => {
+export default (state = initialState, action=SampleAction): SampleState => {
   switch (action.type) {
     case types.INCREMENT_ONE:
       return {
